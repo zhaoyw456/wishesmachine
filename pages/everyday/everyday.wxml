@@ -1,0 +1,9 @@
+<!--pages/everyday/everyday.wxml-->
+<!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
+<view wx:for="{{wish}}">
+  <view >{{item.m1}}</view>
+  <view >{{item.m2}}</view>
+  <view >{{item.m3}}</view>
+</view>
+
+<button bindtap="updata">换一批</button>

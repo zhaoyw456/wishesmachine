@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/festival/festival",
+    "pages/everyday/everyday",
+    "pages/birthday/birthday",
+    "pages/idea/idea"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "祝颂贩卖机",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/festival/festival",
+      "text": "节日祝颂",
+      "iconPath": "Icon/buttom1.png",
+      "selectedIconPath": "Icon/left_yin.png"
+    },
+    {
+      "pagePath": "pages/everyday/everyday",
+      "text": "日常问候",
+      "iconPath": "Icon/buttom1.png",
+      "selectedIconPath": "Icon/left_yin.png"
+    },
+    {
+      "pagePath": "pages/birthday/birthday",
+      "text": "生日祝福",
+      "iconPath": "Icon/buttom1.png",
+      "selectedIconPath": "Icon/left_yin.png"
+    },
+    {
+      "pagePath": "pages/idea/idea",
+      "text": "日常问候",
+      "iconPath": "Icon/buttom1.png",
+      "selectedIconPath": "Icon/left_yin.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}
