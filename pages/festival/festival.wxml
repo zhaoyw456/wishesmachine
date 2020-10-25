@@ -1,11 +1,9 @@
 <!--pages/festival/festival.wxml-->
-<image bindtap="actionSheetTap" src="/Icon/buttom1.png"/>
-<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
-    <block wx:for-items="{{actionSheetItems}}">
-        <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
-    </block>
-    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
-</action-sheet>
-<view>
-    提示：您选择了菜单{{menu}}
+<view class="section">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker" class="flex">
+        <view class="">{{multiArray[0][multiIndex[0]]}}</view>
+        <view class="">{{multiArray[1][multiIndex[1]]}}</view>
+    </view>
+  </picker>
 </view>

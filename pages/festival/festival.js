@@ -1,41 +1,57 @@
-// pages/festival/festival.js
 Page({
-  data:{
-    // text:"这是一个页面"
-    actionSheetHidden:true,
-    actionSheetItems:[
-      {bindtap:'Menu1',txt:'菜单1'},
-      {bindtap:'Menu2',txt:'菜单2'},
-      {bindtap:'Menu3',txt:'菜单3'}
+  data: {
+   
+    multiArray: [['长辈', '同辈','恋人'], ['教师节', '元宵节', '母亲节', '父亲节', '端午节']],
+    objectMultiArray: [
+      [
+        {
+          id: 0,
+          name: '长辈'
+        },
+        {
+          id: 1,
+          name: '同辈'
+        },
+        {
+          id: 2,
+          name: "恋人"
+        }
+      ], [
+        {
+          id: 0,
+          name: '教师节'
+        },
+        {
+          id: 1,
+          name: '元宵节'
+        },
+        {
+          id: 2,
+          name: '母亲节'
+        },
+        {
+          id: 3,
+          name: '父亲节'
+        },
+        {
+          id: 3,
+          name: '端午节'
+        }
+      ]
     ],
-    menu:''
+    multiIndex: [0, 0],
+    
   },
-  actionSheetTap:function(){
+  
+  bindMultiPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      actionSheetHidden:!this.data.actionSheetHidden
+      multiIndex: e.detail.value
     })
   },
-  actionSheetbindchange:function(){
-    this.setData({
-      actionSheetHidden:!this.data.actionSheetHidden
-    })
-  },
-  bindMenu1:function(){
-    this.setData({
-      menu:1,
-      actionSheetHidden:!this.data.actionSheetHidden
-    })
-  },
-  bindMenu2:function(){
-    this.setData({
-      menu:2,
-      actionSheetHidden:!this.data.actionSheetHidden
-    })
-  },
-  bindMenu3:function(){
-    this.setData({
-      menu:3,
-      actionSheetHidden:!this.data.actionSheetHidden
-    })
+  bindMultiPickerColumnChange: function (e) {
+    
+    
   }
+  
 })
