@@ -1,2 +1,17 @@
 <!--pages/idea/idea.wxml-->
-<text>pages/idea/idea.wxml</text>
+<view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+        <image class='select_img {{selectShow&&"select_img_rotate"}}' src='/Icon/buttom1.png'  background-size="contain"></image> 
+    </view>
+    <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+        <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </view>
+    
+</view>
+<view class='a'>
+  <input class='addcon' placeholder='请输入添加内容' bindinput='addcontent'></input>
+  <button class='addbutton' bindtap='adddata'>添加数据</button>
+</view>
+
+
