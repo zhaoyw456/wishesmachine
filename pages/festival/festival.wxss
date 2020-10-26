@@ -1,3 +1,20 @@
 /* pages/festival/festival.wxss */
-
+.flex-box {
+    margin-top: 70px;
+    display: flex;
+}
+.list-item {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+.imgsize {
+    display: flex;
+    justify-content: center;
+}
+.imgsize image{
+    margin-top: 40px;
+    width: 100rpx;
+    height: 100rpx;
+}
   
