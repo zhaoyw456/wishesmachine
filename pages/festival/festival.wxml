@@ -8,7 +8,7 @@
     </view>
     <view class="picker" class="flex-box" >
       <!-- <view class="list-item">{{multiArray[0][multiIndex[0]]}}</view>
-      <view class="list-item">{{multiArray[1][multiIndex[1]]}}</view> -->
+      <view class="list-item">{{multiArray[1][multiIndex[1]]}}</view>  -->
     </view>
   </picker>
 </view>

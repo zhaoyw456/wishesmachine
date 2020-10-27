@@ -60,10 +60,40 @@ Page({
     this.setData({
       multiIndex: e.detail.value
     })
+    /*
+    操作数据库
+    */
+    
   },
   bindMultiPickerColumnChange: function (e) {
-    
-    
+    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+    var data = {
+      multiArray: this.data.multiArray,
+      multiIndex: this.data.multiIndex
+    };
+    data.multiIndex[e.detail.column] = e.detail.value;
+    switch(e.detail.column) {
+      case 0:
+        switch(data.multiIndex[0]) {
+          case 0: 
+            data.multiArray[1] = ['教师节', '元宵节', '母亲节', '父亲节', '端午节','春节','中秋季','重阳节','元旦'];
+            data.multiIndex[1] = 0;
+            break;
+          case 1: 
+            data.multiArray[1] = ['春节', '元宵节', '端午节', '中秋节', '跨年夜'];
+            data.multiIndex[1] = 0;
+            break;
+          case 2:
+            data.multiArray[1] = ['不管什么节，甜甜的话就对了'];
+            data.multiIndex[1] = 0;
+        }
+      case 1:
+        break;
+    }
+    console.log(data.multiIndex);
+    this.setData(data);
   }
+    //
+ 
   
 })
