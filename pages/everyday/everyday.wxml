@@ -13,5 +13,5 @@
     <view class="weui-cell_access weui-cell">{{item.m3}}</view>
   </view>
 
-  <button bindtap="updata">换一批</button>
+  <view bindtap="updata" class="wmui-update-box"><image class="wmui-update-img" src="/Icon/update.png"></image></view>
 </view>

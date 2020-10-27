@@ -1,0 +1,8 @@
+.wmui-update-box {
+    display: flex;
+    justify-content: center;
+  }
+  .wmui-update-img {
+    width: 100rpx;
+    height: 100rpx;
+  }
