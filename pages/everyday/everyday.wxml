@@ -5,12 +5,10 @@
 <view class="page" data-weui-theme="light">
   <view>
     <view class=' list-item-icon'><image src="/Icon/goodmorning.png"></image></view>
-    <view class='list-item-title'>早安</view>
+    <view class='list-item-title'>{{sj}}</view>
   </view>
   <view wx:for="{{wish}}">
-    <view class="weui-cell_access weui-cell">{{item.m1}}</view>
-    <view class="weui-cell_access weui-cell">{{item.m2}}</view>
-    <view class="weui-cell_access weui-cell">{{item.m3}}</view>
+    <view class="weui-cell_access weui-cell">{{item.content}}</view>
   </view>
 
   <view bindtap="updata" class="wmui-update-box"><image class="wmui-update-img" src="/Icon/update.png"></image></view>

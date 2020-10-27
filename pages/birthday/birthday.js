@@ -1,66 +1,24 @@
-// pages/birthday/birthday.js
+// pages/everyday/everyday.js
+const everyDB = wx.cloud.database().collection("birthday")
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  data:{
+    wish:"",  //这是一个空的数组，等下获取到云数据库的数据将存放在其中
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onTabItemTap(item) {
+    everyDB.aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  updata(){
+    everyDB.aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
   }
 })
