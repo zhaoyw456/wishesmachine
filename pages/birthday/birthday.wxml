@@ -1,2 +1,14 @@
 <!--pages/birthday/birthday.wxml-->
-<text>pages/birthday/birthday.wxml</text>
+<view class="page" data-weui-theme="light">
+  <view>
+    <view class=' list-item-icon'><image src="/Icon/happybirthday.png"></image></view>
+    <view class='list-item-title'>happybirthday</view>
+  </view>
+  <view wx:for="{{wish}}">
+    <view class="weui-cell_access weui-cell">{{item.m1}}</view>
+    <view class="weui-cell_access weui-cell">{{item.m2}}</view>
+    <view class="weui-cell_access weui-cell">{{item.m3}}</view>
+  </view>
+
+  <button bindtap="updata">换一批</button>
+</view>

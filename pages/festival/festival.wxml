@@ -1,12 +1,14 @@
 <!--pages/festival/festival.wxml-->
 <view class="section">
   <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-    <view class="imgsize">
-      <image src="/Icon/init.png"></image>
+   
+    <view>
+      <view class=' list-item-icon'><image src="/Icon/festivalSelect.png"></image></view>
+      <view class='list-item-title'>点击选择</view>
     </view>
     <view class="picker" class="flex-box" >
-      <view class="list-item">{{multiArray[0][multiIndex[0]]}}</view>
-      <view class="list-item">{{multiArray[1][multiIndex[1]]}}</view>
+      <!-- <view class="list-item">{{multiArray[0][multiIndex[0]]}}</view>
+      <view class="list-item">{{multiArray[1][multiIndex[1]]}}</view> -->
     </view>
   </picker>
 </view>

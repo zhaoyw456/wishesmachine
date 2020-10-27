@@ -1,1 +1,15 @@
 /* pages/everyday/everyday.wxss */
+.list-item-icon{
+    display: flex;
+    justify-content: center;  
+  }
+.list-item-icon image {
+width: 100rpx;
+height: 100rpx;
+}
+.list-item-title {
+    font-size: 12px;   
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+}

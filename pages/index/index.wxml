@@ -1,17 +1,18 @@
 <!--index.wxml-->
-<view class="tabs">
-  <view class="tabs_zi">
-    <image class="letf_yin" mode="aspectFit" src="/Icon/left_yin.png"></image>
-    <view class="hua1">
-      不管在任何时候，不管在任何地方，
+
+<view id="wishesmachine">
+  <view>
+    <image class="imgicon" src="/Icon/left-quote.png"></image>
+    <view class="indexmetto">
+      <text>{{motto}}</text>
     </view>
-    <view class="hua2">
-      反正你会知道，总会有那么一个人。
+    <view class="indexauthor">
+      —— {{author}}
     </view>
-    <view class="name">
-      ——张爱玲
-    </view>
-    <image class="right_yin" mode="aspectFit" src="/Icon/right_yin.png"></image>
-    <image class="buttom1" mode="aspectFit" bindtap='home' src="/Icon/buttom1.png"></image>
+    <image class="imgicon" src="/Icon/right-quote.png"></image>
+  </view>
+  <view bindtap="switchTab"> 
+    <image class="arrowimg" src="/Icon/arrow.png" bindtap="navigateTo"></image>
   </view>
 </view>
+

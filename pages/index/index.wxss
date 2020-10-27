@@ -1,43 +1,22 @@
-/**index.wxss**/
-.tabs_zi{
+.page{background-color:var(--weui-BG-2)}image{margin:4px 0}
+#wishesmachine {
+  padding: 10px;
+}
+.imgicon {
+  width: 20px;
+  height: 25px;
+}
+.indexmetto {
+  padding: 20px;
+}
+.indexauthor {
+  color: rgba(10, 1, 1, 0.87);
+  padding-left: 230px;
+}
+.arrowimg {
   
-  top: 100rpx;
-}
-.letf_yin{
-  display: flex;
-  flex-direction: column;
-  text-align:left;
-  width: 50rpx;
-  height: 50rpx;
-}
-.hua1{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.hua2{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.name{
-  display: flex;
-  flex-direction: column;
-  text-align:right;
-}
-.right_yin{
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  width: 50rpx;
-  height: 50rpx;
-}
-.buttom1{
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  width: 100rpx;
-  height: 100rpx;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin: 50px 80px;
 }
