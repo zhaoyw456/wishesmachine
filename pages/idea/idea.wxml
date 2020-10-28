@@ -1,53 +1,30 @@
 <!--pages/idea/idea.wxml-->
-<view class='select_box'>
-    <view class='a'>
-        <input class='addcon' placeholder='请输入添加内容' bindinput='addcontent'></input>
-        <button class='addbutton' bindtap='adddata'>添加数据</button>
-    </view>
-    <view class='select' catchtap='selectTap'>
-        <text class='select_text'>{{selectData[index]}}</text>
-        <image class='select_img {{selectShow&&"select_img_rotate"}}' src='/Icon/buttom1.png'  background-size="contain"></image> 
-    </view>
-    <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
-        <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-    </view>
-</view>
-
-
-
-
-<!--
-<view class="page" data-weui-theme="light">
-    <view class="weui-form__control-area">
-        <view class="weui-cell weui-cell_active weui-cell_select">
-			<view class="weui-cell__bd">
-                <picker bindchange="bindPicker1Change" range="{{selectData}}">
-                    <view class="weui-select">请选择</view>
-                </picker>
-			</view>
-        </view>
-        <view class="weui-cells weui-cells_form">
-					<view class="weui-cell weui-cell_active">
-						<view class="weui-cell__hd"><label class="weui-label">祝福语</label></view>
-						<view class="weui-cell__bd weui-flex">
-							<input 
-                                class="weui-input" 
-                                type="text" 
-                                placeholder="请输入祝福语" 
-                                placeholder-class="weui-input__placeholder"
-                                value="{{value}}"
-                                bindinput="onInput"
-                            />
-							
-						</view>
-					</view>
-        </view>
-        <view class="weui-form__opr-area">
-			<a class="weui-btn weui-btn_primary">确定</a>
-		</view>
+<view class="page" data-weui-theme="light" class="page-box">
+    <text class="page-text" bindlongpress="showMask">
+        如果您对我们的小程序有什么意见或者建议，欢迎来撩客服小姐姐和王艳鹤
+    </text>
+    
+    <view class="mask" wx:if="{{show}}">
+        <form bindsubmit="sub">
+            <input class="txt" name='key' maxlength="-1" placeholder='请输入暗号'></input>
+            
+            <button form-type="submit">提交</button>
+            <button bindtap="hideMask">手滑了</button>
+        </form>
+        <!-- <view>
+            <input class="txt" maxlength="-1" placeholder='请输入暗号'></input>
+            <button class="sub-btn" bindinput='sub'>提交</button>
+            <button bindtap="hideMask">手滑了</button>
+        </view> -->
     </view>
 </view>
+<view><button open-type="contact">戳我撩铁柱</button></view>
 
--->
+
+
+
+
+
+
 
 

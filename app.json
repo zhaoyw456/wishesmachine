@@ -4,7 +4,9 @@
     "pages/festival/festival",
     "pages/everyday/everyday",
     "pages/birthday/birthday",
-    "pages/idea/idea"
+    "pages/idea/idea",
+    "pages/idea/addWishes/addWishes",
+    "pages/idea/test/test"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -19,26 +21,26 @@
     "list": [{
       "pagePath": "pages/festival/festival",
       "text": "节日祝颂",
-      "iconPath": "Icon/init.png",
-      "selectedIconPath": "Icon/festival.png"
+      "iconPath": "/Icon/init.png",
+      "selectedIconPath": "/Icon/festival.png"
     },
     {
       "pagePath": "pages/everyday/everyday",
       "text": "日常问候",
-      "iconPath": "Icon/init.png",
-      "selectedIconPath": "Icon/everyday.png"
+      "iconPath": "/Icon/init.png",
+      "selectedIconPath": "/Icon/everyday.png"
     },
     {
       "pagePath": "pages/birthday/birthday",
       "text": "生日祝福",
-      "iconPath": "Icon/init.png",
-      "selectedIconPath": "Icon/birthday.png"
+      "iconPath": "/Icon/init.png",
+      "selectedIconPath": "/Icon/birthday.png"
     },
     {
       "pagePath": "pages/idea/idea",
-      "text": "日常问候",
-      "iconPath": "Icon/init.png",
-      "selectedIconPath": "Icon/everyday.png"
+      "text": "IDEA",
+      "iconPath": "/Icon/init.png",
+      "selectedIconPath": "/Icon/everyday.png"
     }]
   },
   "sitemapLocation": "sitemap.json"
