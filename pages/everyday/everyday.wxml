@@ -4,7 +4,8 @@
 
 <view class="page" data-weui-theme="light">
   <view>
-    <view class=' list-item-icon'><image src="/Icon/goodmorning.png"></image></view>
+    <!-- <view class=' list-item-icon'><image src="/Icon/goodmorning.png"></image></view> -->
+    <view class=' list-item-icon'><image src="/Icon/{{goodimg}}.png"></image></view>
     <view class='list-item-title'>{{sj}}</view>
   </view>
   <view wx:for="{{wish}}">
