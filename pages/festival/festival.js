@@ -1,7 +1,8 @@
+const everyDB = wx.cloud.database()
 Page({
   data: {
-   
-    multiArray: [['长辈', '同辈','恋人'], ['教师节', '元宵节', '母亲节', '父亲节', '端午节','春节','中秋季','重阳节','元旦']],
+    wish:"",
+    multiArray: [['长辈', '同辈','恋人'], ['教师节', '元宵节', '母亲节', '父亲节', '端午节','春节','中秋节','重阳节','元旦']],
     objectMultiArray: [
       [
         {
@@ -52,18 +53,233 @@ Page({
       ]
     ],
     multiIndex: [0, 0],
+    display : false,
     
   },
   
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      multiIndex: e.detail.value
+      multiIndex: e.detail.value,
+      display : true
     })
     /*
     操作数据库
     */
-    
+   if((e.detail.value[0] == 0) && (e.detail.value[1] == 0) ){
+    everyDB.collection("elder_TeachersDay").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 1)){
+    everyDB.collection("elder_LanternFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 2)){
+    everyDB.collection("elder_MotherDay").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 3)){
+    everyDB.collection("elder_FatherDay").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 4)){
+    everyDB.collection("elder_DragonBoatFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 5)){
+    everyDB.collection("elder_SpringFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 6)){
+    everyDB.collection("elder_MoonFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 7)){
+    everyDB.collection("elder_DoubleNinthFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 0) && (e.detail.value[1] == 8)){
+    everyDB.collection("elder_NewYearDay").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 1) && (e.detail.value[1] == 0)){
+    everyDB.collection("peer_SpringFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 1) && (e.detail.value[1] == 1)){
+    everyDB.collection("peer_LanternFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 1) && (e.detail.value[1] == 2)){
+    everyDB.collection("peer_DragonBoatFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 1) && (e.detail.value[1] == 3)){
+    everyDB.collection("peer_MoonFestival").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else if((e.detail.value[0] == 1) && (e.detail.value[1] == 4)){
+    everyDB.collection("peer_NewYearDay").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }else{
+    everyDB.collection("Lovers").aggregate().sample({size : 3}).end().then(res =>{
+      console.log(res);
+      this.setData({
+        wish : res.list
+      })
+    })
+  }
+  },
+  updata(){
+    if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 0) ){
+      everyDB.collection("elder_TeachersDay").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 1)){
+      everyDB.collection("elder_LanternFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 2)){
+      everyDB.collection("elder_MotherDay").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 3)){
+      everyDB.collection("elder_FatherDay").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 4)){
+      everyDB.collection("elder_DragonBoatFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 5)){
+      everyDB.collection("elder_SpringFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 6)){
+      everyDB.collection("elder_MoonFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 7)){
+      everyDB.collection("elder_DoubleNinthFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 8)){
+      everyDB.collection("elder_NewYearDay").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 0)){
+      everyDB.collection("peer_SpringFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 1)){
+      everyDB.collection("peer_LanternFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 2)){
+      everyDB.collection("peer_DragonBoatFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 3)){
+      everyDB.collection("peer_MoonFestival").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 4)){
+      everyDB.collection("peer_NewYearDay").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }else{
+      everyDB.collection("Lovers").aggregate().sample({size : 3}).end().then(res =>{
+        console.log(res);
+        this.setData({
+          wish : res.list
+        })
+      })
+    }
   },
   bindMultiPickerColumnChange: function (e) {
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
