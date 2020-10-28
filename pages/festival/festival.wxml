@@ -6,9 +6,19 @@
       <view class=' list-item-icon'><image src="/Icon/festivalSelect.png"></image></view>
       <view class='list-item-title'>点击选择</view>
     </view>
+
+    
     <view class="picker" class="flex-box" >
       <!-- <view class="list-item">{{multiArray[0][multiIndex[0]]}}</view>
       <view class="list-item">{{multiArray[1][multiIndex[1]]}}</view>  -->
     </view>
+
   </picker>
+  <view wx:for="{{wish}}">
+      <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
+    </view>
+
+    <view class="weui-footer weui-footer_fixed-bottom">
+      <image wx:if="{{display}}" bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>
+    </view>
 </view>
