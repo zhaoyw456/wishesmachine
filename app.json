@@ -5,8 +5,7 @@
     "pages/everyday/everyday",
     "pages/birthday/birthday",
     "pages/idea/idea",
-    "pages/idea/addWishes/addWishes",
-    "pages/idea/test/test"
+    "pages/idea/addWishes/addWishes"
   ],
   "window":{
     "backgroundTextStyle":"light",
