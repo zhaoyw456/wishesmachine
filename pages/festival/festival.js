@@ -308,8 +308,23 @@ Page({
     }
     console.log(data.multiIndex);
     this.setData(data);
-  }
-    //
+  },
+    //复制文本
+    copyWish(e) {
+      console.log(e)
+          wx.setClipboardData({
+            data: e.currentTarget.dataset.text,
+            success: function (res) {
+              wx.getClipboardData({
+                success: function (res) {
+                  wx.showToast({
+                    title: '复制成功'
+                  })
+                }
+              })
+            }
+          })
+    }
  
   
 })
