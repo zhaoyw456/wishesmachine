@@ -8,7 +8,7 @@
     <view class='list-item-title'>{{sj}}</view>
   </view>
   <view wx:for="{{wish}}">
-    <view class="weui-cell_access weui-cell">{{item.content}}</view>
+    <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
   </view>
   <view class="weui-footer weui-footer_fixed-bottom">
     <image bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>

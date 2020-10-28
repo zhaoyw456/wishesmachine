@@ -5,7 +5,7 @@
     <view class='list-item-title'>happybirthday</view>
   </view>
   <view wx:for="{{wish}}">
-    <view class="weui-cell_access weui-cell">{{item.content}}</view>
+    <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
   </view>
   
   <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
