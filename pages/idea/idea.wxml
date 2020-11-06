@@ -1,9 +1,21 @@
 <!--pages/idea/idea.wxml-->
 <view class="page" data-weui-theme="light" class="page-box">
-    <text class="page-text" bindlongpress="showMask">
-        如果您对我们的小程序有什么意见或者建议，欢迎来撩客服小姐姐和王艳鹤
-    </text>
+    <!-- <text class="page-text" bindlongpress="showMask">
+        如果您对我们的小程序有什么意见或者建议，欢迎来撩客服小姐姐
+    </text> -->
     
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+			<view class="weui-flex__item">
+                <view class="placeholder" bindlongpress="showMask">
+                    如果您对我们的小程序有什么意见或者建议，欢迎来撩客服小姐姐
+                </view>
+            </view>
+            
+        </view>
+        <view><button open-type="contact">客服在这里</button></view>
+    </view>
+
     <view class="mask" wx:if="{{show}}">
         <form bindsubmit="sub">
             <input class="txt" name='key' maxlength="-1" placeholder='请输入暗号'></input>
@@ -18,7 +30,7 @@
         </view> -->
     </view>
 </view>
-<view><button open-type="contact">客服在这里</button></view>
+
 
 
 
