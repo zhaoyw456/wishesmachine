@@ -1,4 +1,5 @@
 const everyDB = wx.cloud.database()
+var util = require('../../utils/util.js');
 Page({
   data: {
     wish:"",
@@ -53,15 +54,19 @@ Page({
       ]
     ],
     multiIndex: [0, 0],
-    display : false,
+    updataDisplay : false,
     
+    day:util.calcDays(new Date()),   //获取下个节日的天数和节日
+    // solardate:util.getSolarDate(new Date()),  //阳历日期
+    // lunardate:util.getLunarDate(new Date()),  //农历日期
   },
   
   bindMultiPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       multiIndex: e.detail.value,
-      display : true
+      updataDisplay : true,
+
     })
     /*
     操作数据库
