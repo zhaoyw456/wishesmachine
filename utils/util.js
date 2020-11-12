@@ -1,7 +1,7 @@
   //获取早中晚
   //教师节，元宵节，母亲节，父亲节，端午节，春节，中秋节，重阳节，元旦。L代表农历，S代表阳历
   var year = new Date().getFullYear();
-  var festivalDate = ['S-'+year+'/9/10','L-'+year+'/1/15','S-'+year+'/5/'+motherDay(),'S-'+year+'/6/'+fatherDay(),'L-'+year+'/5/5','L-'+year+'/1/1','L-'+year+'/8/15','L-'+year+'/9/9','S-'+(year+1)+'/1/1'];
+  var festivalDate = ['S-'+year+'/9/10','L-'+year+'/1/15','S-'+year+'/5/'+motherDay(),'S-'+year+'/6/'+fatherDay(),'L-'+year+'/5/5','L-'+year+'/1/1','L-'+year+'/8/15','L-'+year+'/9/9','S-'+(year+1)+'/1/1','S-'+year+'/11/12'];
   function formatTime() {
     var  that = this;
     var timestamp = Date.parse(new Date());
@@ -144,6 +144,8 @@
       return '重阳节';
     }else if(index == 8){
       return '元旦';
+    }else if(index == 9){
+      return '123';
     }
   }
 
@@ -168,14 +170,14 @@
     var minday;
     var index; 
     for(var j = 0; j<day.length;j++){
-      if(day[j]>0){
+      if(day[j]>=0){
         minday = day[j];
         index = j;
         break;
       }
     }
     for(var k = index+1; k<day.length;k++){
-      if(day[k]>0){
+      if(day[k]>=0){
         if(minday>day[k]){
           minday = day[k];
           index = k;

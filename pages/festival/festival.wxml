@@ -7,8 +7,11 @@
       <view class='list-item-title'>点击选择</view>
     </view>
     <view>
-      <view class=' list-item-icon'>
+      <view wx:if="{{day.minday!=0}}" class=' list-item-icon'>
         距离{{day.fes}}还有{{day.minday}}天
+      </view>
+      <view wx:if="{{day.minday==0}}" class=' list-item-icon'>
+        今天是{{day.fes}}
       </view>
     </view>
     

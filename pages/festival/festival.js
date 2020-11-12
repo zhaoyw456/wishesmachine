@@ -55,6 +55,7 @@ Page({
     ],
     multiIndex: [0, 0],
     updataDisplay : false,
+    dayDisplay : true,
     
     day:util.calcDays(new Date()),   //获取下个节日的天数和节日
     // solardate:util.getSolarDate(new Date()),  //阳历日期
