@@ -5,7 +5,9 @@ Page({
   data:{
     wish:"",  //这是一个空的数组，等下获取到云数据库的数据将存放在其中
     sj:util.formatTime(),
-    goodimg: 'goodmorning'
+    goodimg: 'goodmorning',
+    picture:'',
+    textDisplay : true,
   },
   transferImg() {
 
@@ -14,32 +16,7 @@ Page({
   
   */
   onTabItemTap(item) {
-    if(util.formatTime() == '早安'){
-      everyDB.collection("morning").aggregate().sample({size : 3}).end().then(res =>{
-        console.log(res);
-        this.setData({
-          wish : res.list,
-          goodimg: 'goodmorning'
-        })
-      })
-    }else if(util.formatTime() == '午安'){
-      everyDB.collection("noon").aggregate().sample({size : 3}).end().then(res =>{
-        console.log(res);
-        this.setData({
-          wish : res.list,
-          goodimg: 'goodnoon'
-        })
-      })
-    }else{
-      everyDB.collection("night").aggregate().sample({size : 3}).end().then(res =>{
-        console.log(res);
-        this.setData({
-          wish : res.list,
-          goodimg:'goodnight'
-        })
-      })
-    }
-    
+    this.updata()
   },
   updata(){
     if(util.formatTime() == '早安'){
@@ -49,11 +26,21 @@ Page({
           wish : res.list
         })
       })
+      everyDB.collection("fileID_morning").aggregate().sample({size : 1}).end().then(res =>{
+        this.setData({
+          picture : res.list
+        })
+      })
     }else if(util.formatTime() == '午安'){
       everyDB.collection("noon").aggregate().sample({size : 3}).end().then(res =>{
         console.log(res);
         this.setData({
           wish : res.list
+        })
+      })
+      everyDB.collection("fileID_noon").aggregate().sample({size : 1}).end().then(res =>{
+        this.setData({
+          picture : res.list
         })
       })
     }else{
@@ -63,7 +50,22 @@ Page({
           wish : res.list
         })
       })
+      everyDB.collection("fileID_night").aggregate().sample({size : 1}).end().then(res =>{
+        this.setData({
+          picture : res.list
+        })
+      })
     }
+  },
+  text(){
+    this.setData({
+      textDisplay : true
+    })
+  },
+  picture(){
+    this.setData({
+      textDisplay : false
+    })
   },
   //复制文本
   copyWish(e) {

@@ -8,9 +8,23 @@
     <view class=' list-item-icon'><image src="/Icon/{{goodimg}}.png"></image></view>
     <view class='list-item-title'>{{sj}}</view>
   </view>
-  <view wx:for="{{wish}}">
-    <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
+
+  <!--显示文字 -->
+  <view wx:if="{{textDisplay}}">
+    <view wx:for="{{wish}}">
+      <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
+    </view>
   </view>
+  <!--显示图片 -->
+  <view wx:if="{{!textDisplay}}">
+    <view wx:for="{{picture}}">
+      <image  src="{{item.fileID}}"></image>
+    </view>
+  </view>
+
+  <button bindtap="text">文字</button>
+  <button bindtap="picture">图片</button>
+
   <view class="weui-footer weui-footer_fixed-bottom">
     <image bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>
   </view>

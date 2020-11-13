@@ -21,9 +21,23 @@
     </view>
 
   </picker>
-  <view wx:for="{{wish}}">
+
+  <!--显示文字 -->
+  <view wx:if="{{textDisplay}}">
+    <view wx:for="{{wish}}">
       <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
     </view>
+  </view>
+  <!--显示图片 -->
+  <view wx:if="{{!textDisplay}}">
+    <view wx:for="{{picture}}">
+      <image  src="{{item.fileID}}"></image>
+    </view>
+  </view>
+
+
+    <button wx:if="{{updataDisplay}}" bindtap="text">文字</button>
+    <button wx:if="{{updataDisplay}}" bindtap="picture">图片</button>
 
     <view class="weui-footer weui-footer_fixed-bottom">
       <image wx:if="{{updataDisplay}}" bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>
