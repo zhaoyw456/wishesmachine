@@ -1,22 +1,48 @@
 .page{background-color:var(--weui-BG-2)}image{margin:4px 0}
-#wishesmachine {
-  padding: 10px;
+page{
+  height: 100%;
 }
-.imgicon {
-  width: 20px;
+.index-box {
+  height: 100%;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.motto-box {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+.img-box {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.motto {
+  align-self: center;
+}
+.author {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.right-box {
+  align-self: flex-end;
+}
+
+
+
+
+
+
+.motto-box image {
+  width:  25px;
   height: 25px;
 }
-.indexmetto {
-  padding: 20px;
-}
-.indexauthor {
-  color: rgba(10, 1, 1, 0.87);
-  padding-left: 230px;
-}
-.arrowimg {
-  
-  text-align: center;
+.img-box image {
   width: 150px;
   height: 150px;
-  margin: 50px 80px;
 }

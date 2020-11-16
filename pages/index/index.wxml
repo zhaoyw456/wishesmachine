@@ -1,18 +1,23 @@
 <!--index.wxml-->
 
-<view id="wishesmachine">
-  <view>
-    <image class="imgicon" src="/Icon/left-quote.png"></image>
-    <view class="indexmetto">
-      <text>{{motto}}</text>
+<view class="index-box">
+  <view class="motto-box">
+    <view class="left-box">
+      <image src="/Icon/left-quote.png" style=""></image>
     </view>
-    <view class="indexauthor">
-      —— {{author}}
+    <view class="motto">
+      <view name="" id="" >
+        {{motto}}
+      </view>
+      <view class="author">
+        —— {{author}}
+      </view>
     </view>
-    <image class="imgicon" src="/Icon/right-quote.png"></image>
+    <view class="right-box">
+      <image src="/Icon/right-quote.png"></image>
+    </view>
   </view>
-  <view bindtap="switchTab"> 
+  <view class="img-box" bindtap="switchTab">
     <image class="arrowimg" src="/Icon/arrow.png" bindtap="navigateTo"></image>
   </view>
 </view>
-
