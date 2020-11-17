@@ -1,5 +1,5 @@
 <!--pages/idea/idea.wxml-->
-<view class="page" data-weui-theme="light" class="page-box">
+<view class="page-box" data-weui-theme="light">
 
     <view class="page__bd page__bd_spacing">
         <view class="weui-flex">
@@ -11,17 +11,11 @@
 
         </view>
         <view><button open-type="contact">客服在这里</button></view>
+        
     </view>
+</view>
 
-    <!-- <view class="mask" wx:if="{{show}}">
-        <form bindsubmit="sub">
-            <input class="txt" name='key' maxlength="-1" placeholder='请输入暗号'></input>
-
-            <button form-type="submit">提交</button>
-            <button bindtap="hideMask">手滑了</button>
-        </form>
-    </view> -->
-
+    
     <view class="cu-modal show" wx:if="{{show}}">
         <form bindsubmit="sub">
             <view class="cu-dialog">
@@ -32,7 +26,7 @@
                     </view>
                 </view>
                 <view class="padding-xl">
-                    <input class="txt" name='key' maxlength="-1" placeholder='请输入暗号'></input>
+                    <input name='key' placeholder='请输入6位暗号'></input>
                 </view>
                 <view class="cu-bar bg-white justify-end">
                     <view class="action">
@@ -49,4 +43,3 @@
 
 
 
-</view>

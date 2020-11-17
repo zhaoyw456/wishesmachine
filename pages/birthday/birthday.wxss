@@ -1,4 +1,10 @@
 /* pages/birthday/birthday.wxss */
+page {
+  display: flex;
+  width: 750rpx;
+  height: 100%;
+  justify-content: center;
+}
 .list-item-icon{
     display: flex;
     justify-content: center;  
@@ -12,4 +18,42 @@ height: 100rpx;
     height: 60rpx;
     line-height: 60rpx;
     text-align: center;
+}
+
+.picture-box {
+  width: 700rpx;
+  height: 750rpx;
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+}
+.picture-item {
+  /* position: relative; */
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  height: 350rpx;
+}
+/* .picture-item::before,.picture-item::after {
+  content: " ";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: var(--weui-FG-3);
+}
+.picture-item::before {
+    top: 0;
+    width: 1px;
+    border-right: 1px solid var(--weui-FG-3);
+    transform: scaleX(.5);
+}
+.picture-item::after {
+    left: 0;
+    height: 1px;
+    border-bottom: 1px solid var(--weui-FG-3);
+    transform: scaleY(.5);
+} */
+.picture-item image {
+  width: 99%;
+  height: 99%;
 }

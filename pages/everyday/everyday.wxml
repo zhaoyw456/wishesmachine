@@ -7,23 +7,33 @@
     <!-- <view class=' list-item-icon'><image src="/Icon/goodmorning.png"></image></view> -->
     <view class=' list-item-icon'><image src="/Icon/{{goodimg}}.png"></image></view>
     <view class='list-item-title'>{{sj}}</view>
+    <view class="cu-form-group">
+      <view class="title">选择图片</view>
+      <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
+    </view>
   </view>
 
   <!--显示文字 -->
-  <view wx:if="{{textDisplay}}">
+  <view wx:if="{{!checked}}">
     <view wx:for="{{wish}}">
       <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
     </view>
   </view>
   <!--显示图片 -->
+  <view wx:if="{{checked}}" class="picture-box">
+    <view class="picture-item" wx:for="{{picture}}">		
+				<image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
+    </view>
+  </view>
+
+
   <view wx:if="{{!textDisplay}}">
     <view wx:for="{{picture}}">
       <image  src="{{item.fileID}}"></image>
     </view>
   </view>
 
-  <button bindtap="text">文字</button>
-  <button bindtap="picture">图片</button>
+  
 
   <view class="weui-footer weui-footer_fixed-bottom">
     <image bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>

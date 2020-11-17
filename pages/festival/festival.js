@@ -1,8 +1,13 @@
 const everyDB = wx.cloud.database()
 var util = require('../../utils/util.js');
+let imgList = []
+let firstSwitch = 0//第一次点击选择图片 加载图片
+
 Page({
   data: {
     wish:"",
+    checked: false,
+    btnshow : false,//控制显示选择图片是否显示
     multiArray: [['长辈', '同辈','恋人'], ['教师节', '元宵节', '母亲节', '父亲节', '端午节','春节','中秋节','重阳节','元旦']],
     objectMultiArray: [
       [
@@ -65,11 +70,11 @@ Page({
   },
   
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    
     this.setData({
+      btnshow: true,//显示选择图片
       multiIndex: e.detail.value,
       updataDisplay : true,
-
     })
     /*
     操作数据库
@@ -85,11 +90,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_TeachersDay").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_TeachersDay").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 1)){
       everyDB.collection("elder_LanternFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -98,11 +108,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_LanternFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_LanternFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 2)){
       everyDB.collection("elder_MotherDay").aggregate().sample({size : 3}).end().then(res =>{
@@ -111,11 +126,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_MotherDay").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_MotherDay").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 3)){
       everyDB.collection("elder_FatherDay").aggregate().sample({size : 3}).end().then(res =>{
@@ -124,11 +144,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_FatherDay").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_FatherDay").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 4)){
       everyDB.collection("elder_DragonBoatFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -137,11 +162,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_DragonBoatFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_DragonBoatFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 5)){
       everyDB.collection("elder_SpringFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -150,11 +180,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_SpringFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_SpringFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 6)){
       everyDB.collection("elder_MoonFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -163,11 +198,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_MoonFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_MoonFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 7)){
       everyDB.collection("elder_DoubleNinthFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -176,11 +216,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_DoubleNinthFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_DoubleNinthFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 0) && (this.data.multiIndex[1] == 8)){
       everyDB.collection("elder_NewYearDay").aggregate().sample({size : 3}).end().then(res =>{
@@ -189,11 +234,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_elder_NewYearDay").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_elder_NewYearDay").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 0)){
       everyDB.collection("peer_SpringFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -202,11 +252,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_peer_SpringFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_peer_SpringFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 1)){
       everyDB.collection("peer_LanternFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -215,11 +270,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_peer_LanternFestiva").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_peer_LanternFestiva").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 2)){
       everyDB.collection("peer_DragonBoatFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -228,11 +288,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_peer_DragonBoatFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_peer_DragonBoatFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 3)){
       everyDB.collection("peer_MoonFestival").aggregate().sample({size : 3}).end().then(res =>{
@@ -241,11 +306,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_peer_MoonFestival").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_peer_MoonFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else if((this.data.multiIndex[0] == 1) && (this.data.multiIndex[1] == 4)){
       everyDB.collection("peer_NewYearDay").aggregate().sample({size : 3}).end().then(res =>{
@@ -254,11 +324,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_peer_NewYearDay").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_peer_NewYearDay").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }else{
       everyDB.collection("Lovers").aggregate().sample({size : 3}).end().then(res =>{
@@ -267,11 +342,16 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_Lovers").aggregate().sample({size : 1}).end().then(res =>{
+      everyDB.collection("fileID_Lovers").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list
         })
+        //push imageList数组
+        let i = 0
+        for(;i<res.list.length;i++) {
+          imgList.push(res.list[i].fileID)
+        }
       })
     }
   },
@@ -328,7 +408,28 @@ Page({
               })
             }
           })
+    },
+    //开关选择器bingchange
+  switchCheckStatus(e) {
+    this.setData({
+      checked: !this.data.checked 
+    })
+    //只在第一次点击选择图片查询图片
+    if(!firstSwitch) {
+      this.updata()
+      firstSwitch = 1
     }
+  },
+  //预览图片
+  previewImage(event) {
+    let currentUrl = event.currentTarget.dataset.src
+    console.log("currentUrl",currentUrl);
+    //生成urls
+    wx.previewImage({
+      current: currentUrl, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    })
+  }
  
   
 })

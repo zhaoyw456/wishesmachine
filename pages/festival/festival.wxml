@@ -1,45 +1,34 @@
 <!--pages/festival/festival.wxml-->
 <view class="section">
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
-   
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+    value="{{multiIndex}}" range="{{multiArray}}">
+
     <view>
-      <view class=' list-item-icon'><image src="/Icon/festivalSelect.png"></image></view>
+      <view class=' list-item-icon'>
+        <image src="/Icon/festivalSelect.png"></image>
+      </view>
       <view class='list-item-title'>点击选择</view>
     </view>
-    <view>
-      <view wx:if="{{day.minday!=0}}" class=' list-item-icon'>
-        距离{{day.fes}}还有{{day.minday}}天
-      </view>
-      <view wx:if="{{day.minday==0}}" class=' list-item-icon'>
-        今天是{{day.fes}}
-      </view>
-    </view>
-    
-    <view class="picker" class="flex-box" >
-      <!-- <view class="list-item">{{multiArray[0][multiIndex[0]]}}</view>
-      <view class="list-item">{{multiArray[1][multiIndex[1]]}}</view>  -->
-    </view>
-
   </picker>
-
+  <view class="cu-form-group" wx:if="{{btnshow}}">
+    <view class="title">选择图片</view>
+    <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
+  </view>
   <!--显示文字 -->
-  <view wx:if="{{textDisplay}}">
+  <view wx:if="{{!checked}}">
     <view wx:for="{{wish}}">
       <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
     </view>
   </view>
   <!--显示图片 -->
-  <view wx:if="{{!textDisplay}}">
-    <view wx:for="{{picture}}">
-      <image  src="{{item.fileID}}"></image>
+
+  <view wx:if="{{checked}}" class="picture-box">
+    <view class="picture-item" wx:for="{{picture}}">
+      <image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
     </view>
   </view>
 
-
-    <button wx:if="{{updataDisplay}}" bindtap="text">文字</button>
-    <button wx:if="{{updataDisplay}}" bindtap="picture">图片</button>
-
-    <view class="weui-footer weui-footer_fixed-bottom">
-      <image wx:if="{{updataDisplay}}" bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>
-    </view>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <image wx:if="{{updataDisplay}}" bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>
+  </view>
 </view>

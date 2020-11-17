@@ -36,7 +36,7 @@ Page({
         })
       })
     } else {
-      everyDB_picture.aggregate().sample({size : 9}).end().then(res =>{
+      everyDB_picture.aggregate().sample({size : 4}).end().then(res =>{
         console.log("pic",res)
         this.setData({
           picture : res.list

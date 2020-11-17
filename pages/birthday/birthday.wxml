@@ -19,19 +19,11 @@
   </view>
   <!--显示图片 -->
   
-  <view wx:if="{{checked}}" class="weui-grids">
-    <a class="weui-grid" wx:for="{{picture}}">
-			<view class="weui-grid__icon">
+  <view wx:if="{{checked}}" class="picture-box">
+    <view class="picture-item" wx:for="{{picture}}">		
 				<image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
-			</view>
-			<!-- <view class="weui-grid__label">Grid</view> -->
-		</a>
+    </view>
   </view>
-
-
-
-
-
 
   <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
     <image class="wmui-update-img" src="/Icon/update.png"></image>
