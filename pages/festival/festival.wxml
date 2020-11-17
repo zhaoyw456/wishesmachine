@@ -9,7 +9,18 @@
       </view>
       <view class='list-item-title'>点击选择</view>
     </view>
+    <view>
+      <view wx:if="{{day.minday!=0}}" class=' list-item-icon'>
+        距离{{day.fes}}还有{{day.minday}}天
+      </view>
+      <view wx:if="{{day.minday==0}}" class=' list-item-icon'>
+        今天是{{day.fes}}
+      </view>
+    </view>
   </picker>
+  
+  
+
   <view class="cu-form-group" wx:if="{{btnshow}}">
     <view class="title">选择图片</view>
     <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
