@@ -5,8 +5,7 @@
     "pages/everyday/everyday",
     "pages/birthday/birthday",
     "pages/idea/idea",
-    "pages/idea/addWishes/addWishes",
-    "pages/test/test"
+    "pages/idea/addWishes/addWishes"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -39,12 +38,6 @@
     {
       "pagePath": "pages/idea/idea",
       "text": "IDEA",
-      "iconPath": "/Icon/init.png",
-      "selectedIconPath": "/Icon/everyday.png"
-    },
-    {
-      "pagePath": "pages/test/test",
-      "text": "test",
       "iconPath": "/Icon/init.png",
       "selectedIconPath": "/Icon/everyday.png"
     }
