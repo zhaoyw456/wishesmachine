@@ -40,6 +40,6 @@
   </view>
 
   <view class="weui-footer weui-footer_fixed-bottom">
-    <image wx:if="{{updataDisplay}}" bindtap="updata" class="wmui-update-img" src="/Icon/update.png"></image>
+    <image wx:if="{{updataDisplay}}" bindtap="updata" class="wmui-update-img" src="/Icon/updatebtn.png"></image>
   </view>
 </view>

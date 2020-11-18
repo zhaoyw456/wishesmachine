@@ -26,6 +26,6 @@
   </view>
 
   <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
-    <image class="wmui-update-img" src="/Icon/update.png"></image>
+    <image class="wmui-update-img" src="/Icon/updatebtn.png"></image>
   </view>
 </view>
