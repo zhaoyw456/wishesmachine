@@ -1,31 +1,28 @@
 <!--pages/birthday/birthday.wxml-->
-<view class="page" data-weui-theme="light">
-  <view>
-    <view class=' list-item-icon'>
-      <image src="/Icon/happybirthday.png"></image>
-    </view>
-    <view class='list-item-title'>happybirthday</view>
-    <view class="cu-form-group">
+<view class="wm-page" data-weui-theme="light">
+  <view class="wm-header wm-item">
+    <image src="/Icon/happybirthday.png" style="width:100rpx;height:100rpx;"></image>
+    <view class="wm-theme">happybirthday</view>
+    <view class="cu-form-group" style="width:100%">
       <view class="title">选择图片</view>
       <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
     </view>
   </view>
 
   <!--显示文字 -->
-  <view wx:if="{{!checked}}">
+  <view wx:if="{{!checked}}" >
     <view wx:for="{{wish}}">
       <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
     </view>
   </view>
   <!--显示图片 -->
-  
-  <view wx:if="{{checked}}" class="picture-box">
-    <view class="picture-item" wx:for="{{picture}}">		
-				<image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
+  <view wx:if="{{checked}}" class="picture-box" >
+    <view class="picture-item" wx:for="{{picture}}">
+      <image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
     </view>
   </view>
 
-  <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
-    <image class="wmui-update-img" src="/Icon/updatebtn.png"></image>
+  <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom wm-item">
+    <image class="wmui-update-img" src="/Icon/updatebtn.png" style="width:100rpx;height:100rpx;"></image>
   </view>
 </view>
