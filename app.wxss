@@ -4,12 +4,48 @@
 @import '/style/wmui.wxss';
 @import './colorui/icon.wxss';
 @import './colorui/main.wxss';
-.container {
+.wm-page {
+  width: 750rpx;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
+  align-items: center;
+}
+
+.wm-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+ .wm-theme { 
+  height: 45px;
+  line-height: 45px;
+  font-size: 12px; 
+ } 
+
+/* 图片显示 */
+.picture-box {
+  width: 700rpx;
+  height: 750rpx;
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+.picture-item {
   box-sizing: border-box;
-} 
+  flex: 0 0 50%;
+  height: 350rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture-item image {
+  width: 99%;
+  height: 99%;
+}

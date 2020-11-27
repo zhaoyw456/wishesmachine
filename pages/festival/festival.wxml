@@ -1,29 +1,24 @@
 <!--pages/festival/festival.wxml-->
-<view class="section">
-  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
-    value="{{multiIndex}}" range="{{multiArray}}">
+<view class="wm-page">
+  <view class="wm-header">
+    <picker style="height：100rpx;" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+      value="{{multiIndex}}" range="{{multiArray}}">
+      <image src="/Icon/festivalSelect.png" style="width:100rpx;height:100rpx;"></image>
+    </picker>
+    <!-- <view class="wm-theme">点击选择</view> -->
 
-    <view>
-      <view class=' list-item-icon'>
-        <image src="/Icon/festivalSelect.png"></image>
-      </view>
-      <view class='list-item-title'>点击选择</view>
+    <view class="wm-theme" wx:if="{{day.minday!=0}}">
+      距离{{day.fes}}还有{{day.minday}}天
     </view>
-    <view>
-      <view wx:if="{{day.minday!=0}}" class=' list-item-icon'>
-        距离{{day.fes}}还有{{day.minday}}天
-      </view>
-      <view wx:if="{{day.minday==0}}" class=' list-item-icon'>
-        今天是{{day.fes}}
-      </view>
+    <view class="wm-theme" wx:if="{{day.minday==0}}">
+      今天是{{day.fes}}
     </view>
-  </picker>
-  
-  
 
-  <view class="cu-form-group" wx:if="{{btnshow}}">
-    <view class="title">选择图片</view>
-    <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
+    <view class="cu-form-group" style="width:100%" wx:if="{{btnshow}}">
+      <view class="title">选择图片</view>
+      <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
+    </view>
+
   </view>
   <!--显示文字 -->
   <view wx:if="{{!checked}}">
@@ -32,14 +27,13 @@
     </view>
   </view>
   <!--显示图片 -->
-
   <view wx:if="{{checked}}" class="picture-box">
     <view class="picture-item" wx:for="{{picture}}">
       <image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
     </view>
   </view>
 
-  <view class="weui-footer weui-footer_fixed-bottom">
-    <image wx:if="{{updataDisplay}}" bindtap="updata" class="wmui-update-img" src="/Icon/updatebtn.png"></image>
+  <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
+    <image class="wmui-update-img" src="/Icon/updatebtn.png" style="width:100rpx;height:100rpx;"></image>
   </view>
 </view>
