@@ -1,13 +1,9 @@
 <!--pages/everyday/everyday.wxml-->
-<!--item就相当于数组名+下标的结合体，适用于调用数组所有数据-->
-
-
-<view class="page" data-weui-theme="light">
-  <view>
-    <!-- <view class=' list-item-icon'><image src="/Icon/goodmorning.png"></image></view> -->
-    <view class=' list-item-icon'><image src="/Icon/{{goodimg}}.png"></image></view>
-    <view class='list-item-title'>{{sj}}</view>
-    <view class="cu-form-group">
+<view class="wm-page" data-weui-theme="light">
+  <view class="wm-header">
+    <image src="/Icon/{{goodimg}}.png" style="width:100rpx;height:100rpx;"></image>
+    <view class="wm-theme">{{sj}}</view>
+    <view class="cu-form-group"  style="width:100%">
       <view class="title">选择图片</view>
       <switch class="orange radius sm" checked="{{checked}}" bindchange="switchCheckStatus"></switch>
     </view>

@@ -1,7 +1,7 @@
 <!--pages/festival/festival.wxml-->
 <view class="wm-page">
   <view class="wm-header">
-    <picker style="height：100rpx;" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+    <picker style="height:100rpx;" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
       value="{{multiIndex}}" range="{{multiArray}}">
       <image src="/Icon/festivalSelect.png" style="width:100rpx;height:100rpx;"></image>
     </picker>
