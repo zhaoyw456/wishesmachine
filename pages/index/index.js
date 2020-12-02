@@ -21,7 +21,14 @@ Page({
     wx.switchTab({
       url: '/pages/festival/festival',
     })
+  },
+  //小程序转发功能
+  onShareAppMessage() {
+    return {
+      title: '年轻人都在用的祝福语小程序',
+      imageUrl: '/Icon/share.jpg',
+      path: '/pages/index/index'
+    }
   }
-  
 })
 
