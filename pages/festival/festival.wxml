@@ -33,7 +33,10 @@
     </view>
   </view>
 
-  <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
-    <image class="wmui-update-img" src="/Icon/updatebtn.png" style="width:100rpx;height:100rpx;"></image>
+  <view wx:if="{{updataDisplay}}" class="picture-box">
+    <view bindtap="updata" class="weui-footer weui-footer_fixed-bottom">
+      <image class="wmui-update-img" src="/Icon/updatebtn.png" style="width:100rpx;height:100rpx;"></image>
+    </view>
   </view>
+  
 </view>
