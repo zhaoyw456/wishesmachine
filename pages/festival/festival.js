@@ -270,7 +270,7 @@ Page({
           wish : res.list
         })
       })
-      everyDB.collection("fileID_peer_LanternFestiva").aggregate().sample({size : 4}).end().then(res =>{
+      everyDB.collection("fileID_peer_LanternFestival").aggregate().sample({size : 4}).end().then(res =>{
         console.log(res);
         this.setData({
           picture : res.list

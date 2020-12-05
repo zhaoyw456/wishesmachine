@@ -151,13 +151,13 @@ Page({
       })
     }else if(this.data.index == 11){
       this.setData({
-        fes_database:'DragonBoatFestival',
-        fileID_database:'fileID_DragonBoatFestival'
+        fes_database:'peer_DragonBoatFestival',
+        fileID_database:'fileID_peer_DragonBoatFestival'
       })
     }else if(this.data.index == 12){
       this.setData({
-        fes_database:'peer_MoonFestivaly',
-        fileID_database:'fileID_peer_MoonFestivaly'
+        fes_database:'peer_MoonFestival',
+        fileID_database:'fileID_peer_MoonFestival'
       })
     }else if(this.data.index == 13){
       this.setData({
