@@ -12,13 +12,13 @@
   <!--显示文字 -->
   <view wx:if="{{!checked}}" >
     <view wx:for="{{wish}}">
-      <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell">{{item.content}}</view>
+        <view bindtap="copyWish" data-text="{{item.content}}" class="weui-cell_access weui-cell" >{{item.content}}</view>
     </view>
   </view>
   <!--显示图片 -->
   <view wx:if="{{checked}}" class="picture-box" >
     <view class="picture-item" wx:for="{{picture}}">
-      <image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
+      <image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}" show-menu-by-longpress></image>
     </view>
   </view>
 

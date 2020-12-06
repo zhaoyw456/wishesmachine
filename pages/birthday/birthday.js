@@ -57,6 +57,7 @@ Page({
           success: function (res) {
             wx.getClipboardData({
               success: function (res) {
+                // console.log(e.currentTarget.dataset.text),
                 wx.showToast({
                   title: '复制成功'
                 })
@@ -65,6 +66,7 @@ Page({
           }
         })
   },
+  
   //导航条
   tabSelect(e) {
     this.setData({

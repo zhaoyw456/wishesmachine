@@ -18,7 +18,7 @@
   <!--显示图片 -->
   <view wx:if="{{checked}}" class="picture-box">
     <view class="picture-item" wx:for="{{picture}}">		
-				<image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}"></image>
+				<image src="{{item.fileID}}" alt bindtap="previewImage" data-src="{{item.fileID}}" show-menu-by-longpress></image>
     </view>
   </view>
 
